@@ -17,4 +17,9 @@ $game = new GuessingGame(1);
 
 $game->run();
 
+
+
+
+
+
 require 'view.php';
