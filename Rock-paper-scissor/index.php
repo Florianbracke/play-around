@@ -12,11 +12,22 @@ session_start();
 // Load you classes
 require_once 'classes/rock-paper-scissorGame.php';
 
+function whatIsHappening() {
+    
+    echo '<h2>$_POST</h2>';
+    echo "<pre>";
+    var_dump($_POST);
+    echo "</pre>";
+   
+    echo '<h2>$_SESSION</h2>';
+    echo "<pre>";
+    var_dump($_SESSION);
+    echo "</pre>";   
+}
+
 // Start the game
 // As this game is; rather simple, one class should be sufficient
-
-$game = new battle("","");
-
+$game = new battle("","",0);
 $game->run();
 
  //var_dump($opponentArray);

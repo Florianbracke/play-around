@@ -12,16 +12,17 @@
 <?php require_once 'classes/rock-paper-scissorGame.php'; ?>
 
 <form method="post" action="">
-
-			pick a type:
-            <select id="type" name="type">
-            <option value="water">water
-            <option value="grass">grass
-            <option value="fire">fire
-
-			<input type="submit">
-
-           
+pick a type:
+    <select name="type">
+        <option value="grass">grass	</option>
+        <option value="water">water	</option>
+        <option value="fire">fire	</option>
+    <input type="submit">
+</form>
+<label for="count"> Score: <?php echo $_SESSION['count'];?></label>
+	
+<form action="" method= "post">
+<input type="submit" name='reset' value="reset"> 
 </form>
 
 </body>
