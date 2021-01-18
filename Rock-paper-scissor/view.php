@@ -6,13 +6,22 @@
 		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Casino royale - guessing game</title>
+    
 </head>
-<body>
+<body>  
+<?php require_once 'classes/rock-paper-scissorGame.php'; ?>
+
 <form method="post" action="">
-			Guess: <input type="text" name="type">
+
+			pick a type:
+            <select id="type" name="type">
+            <option value="water">water
+            <option value="grass">grass
+            <option value="fire">fire
+
 			<input type="submit">
-</form>
-</form>
+
+           
 </form>
 
 </body>

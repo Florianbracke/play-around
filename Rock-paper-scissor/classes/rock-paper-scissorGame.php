@@ -1,89 +1,108 @@
 <?php 
 
+    
 
 class battle{
-    //public $opponentArray= array("grass", "water", "fire");
-    //public $chosenType;
+    
     public $opponentType;
     public $chosenType; 
     
-
-    
-    //public $opponentType = $opponentArray[rand(1,3)];
-    
     public function __construct($chosenType, $opponentType)
     {
-        
-        
         if (!empty($_POST['type'])) {
-        $this->chosenType = $_POST['type'];
-        } 
+        $this->chosenType = $_POST['type'];}
         $this->opponentType = $opponentType;
     }
 
-    function battleSwitch()
-    {                                                           echo $this->chosenType;
+    function run()
+    { 
+        
+        //functions
+        $this->opponent();
+
         if ($this->chosenType == "grass")
-        { echo "is altijd groener aan den overkant";
+        { 
             switch ($this->opponentType) {
                 
                 case "grass":
-                    echo "tie"; 
+                    echo "player picks $this->chosenType, opponent picks $this->opponentType. <br><br> It's a tie!<br><br>"; 
                     break;
 
                 case "water":
-                    echo "win"; 
+                    echo "player picks $this->chosenType, opponent picks $this->opponentType. <br><br> It's a win!!<br><br>"; 
                     break;
 
                 case "fire":
-                    echo "lose"; 
+                    echo "player picks $this->chosenType, opponent picks $this->opponentType. <br><br> Opponent wins...<br><br>" ; 
                     break;
             }
         } 
 
         if ($this->chosenType == "water")
-        { echo " is voor de vissen";
+        { 
             switch ($this->opponentType) {
                 
                 case "grass":
-                    echo "lose"; 
+                    echo "player picks $this->chosenType, opponent picks $this->opponentType. <br><br> Opponent wins...<br><br>" ;  
                     break;
 
                 case "water":
-                    echo "tie"; 
+                    echo "player picks $this->chosenType, opponent picks $this->opponentType. <br><br> It's a tie!<br><br>";  
                     break;
 
                 case "fire":
-                    echo "win"; 
+                    echo "player picks $this->chosenType, opponent picks $this->opponentType. <br><br> It's a win!!<br><br>"; 
                     break;
             }
         } 
 
         if ($this->chosenType == "fire")
-        { echo " en vlam";
+        { 
             switch ($this->opponentType) {
                 
                 case "grass":
-                    echo "win"; 
+                    echo "player picks $this->chosenType, opponent picks $this->opponentType. <br><br> It's a win!!<br><br>"; 
                     break;
 
                 case "water":
-                    echo "lose"; 
+                    echo "player picks $this->chosenType, opponent picks $this->opponentType. <br><br> Opponent wins...<br><br>" ;  
                     break;
 
                 case "fire":
-                    echo "tie"; 
+                    echo "player picks $this->chosenType, opponent picks $this->opponentType. <br><br> It's a tie!<br><br>";  
                     break;
             }
         } 
     }
 
+    function opponent()
+    {
+        $randomNumber = rand(1,3);
+        
+        switch ($randomNumber)
+        {
+            case 1: 
+                $this->opponentType = "grass";
+                break;
+
+            case 2: 
+                $this->opponentType = "water";
+                break;
+
+            case 3: 
+                $this->opponentType = "fire";
+                break;
+        }
+    }
     
+    function playerPick()
+    {
+        echo "teietjes";
+    }
 
 }
 
-    $game = new battle($opponentType, $chosenType);
 
-    $game->battleSwitch();
+
 
 ?>

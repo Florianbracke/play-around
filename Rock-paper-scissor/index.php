@@ -15,9 +15,9 @@ require_once 'classes/rock-paper-scissorGame.php';
 // Start the game
 // As this game is; rather simple, one class should be sufficient
 
+$game = new battle("","");
 
-
-
+$game->run();
 
  //var_dump($opponentArray);
 
